@@ -16,7 +16,7 @@ $(function() {
                               disabled: true
                               });
            }
-           checkForWin(); 
+           checkForWin(countUp, count); 
          } 
 
     });
@@ -43,14 +43,24 @@ $(function() {
 
 function pad(count) {     return (count<10) ? ("0" + count.toString()) : (count.toString());   } 
 
-function checkForWin() {
+function checkForWin(countUp, count) {
+  var winner = [];
   var howMany = $('.ui-draggable-disabled').length;
   if (howMany === 9){
     console.log("game over. well done");
+    winner.push(count);
+    console.log(winner);
     clearTimeout(countUp);
+    alert("it is players two turn")
   }
 
 }
+
+
+//function nextPlayer {
+  //reset board 
+  //reset timer
+//}
 
 
 
