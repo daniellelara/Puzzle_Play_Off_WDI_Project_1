@@ -9,6 +9,10 @@ $(function() {
             var dropped = ui.draggable;
             var droppedOn = $(this);
             $(dropped).detach().css({top: 0,left: 0}).appendTo(droppedOn);
+            $('#pieceOneCopy').draggable({
+  disabled: true
+});
+
 
         }
     });
@@ -20,6 +24,9 @@ $(function() {
             var dropped = ui.draggable;
             var droppedOn = $(this);
             $(dropped).detach().css({top: 0,left: 0}).appendTo(droppedOn);
+            $('#pieceTwoCopy').draggable({
+              disabled: true
+            });
         }
     });
      $('#pieceThreeCopy').draggable();
@@ -29,6 +36,9 @@ $(function() {
             var dropped = ui.draggable;
             var droppedOn = $(this);
             $(dropped).detach().css({top: 0,left: 0}).appendTo(droppedOn);
+            $('#pieceThreeCopy').draggable({
+              disabled: true
+            });
         }
     });
      $('#pieceFourCopy').draggable();
@@ -38,6 +48,9 @@ $(function() {
             var dropped = ui.draggable;
             var droppedOn = $(this);
             $(dropped).detach().css({top: 0,left: 0}).appendTo(droppedOn);
+            $('#pieceFourCopy').draggable({
+              disabled: true
+            });
         }
     });
 
@@ -48,6 +61,9 @@ $(function() {
             var dropped = ui.draggable;
             var droppedOn = $(this);
             $(dropped).detach().css({top: 0,left: 0}).appendTo(droppedOn);
+            $('#pieceFiveCopy').draggable({
+              disabled: true
+            });
         }
     });
      $('#pieceSixCopy').draggable();
@@ -57,6 +73,9 @@ $(function() {
             var dropped = ui.draggable;
             var droppedOn = $(this);
             $(dropped).detach().css({top: 0,left: 0}).appendTo(droppedOn);
+            $('#pieceSixCopy').draggable({
+              disabled: true
+            });
         }
     });
      $('#pieceSevenCopy').draggable();
@@ -66,6 +85,9 @@ $(function() {
             var dropped = ui.draggable;
             var droppedOn = $(this);
             $(dropped).detach().css({top: 0,left: 0}).appendTo(droppedOn);
+            $('#pieceSevenCopy').draggable({
+              disabled: true
+            });
         }
     });
      $('#pieceEightCopy').draggable();
@@ -75,6 +97,9 @@ $(function() {
             var dropped = ui.draggable;
             var droppedOn = $(this);
             $(dropped).detach().css({top: 0,left: 0}).appendTo(droppedOn);
+            $('#pieceEightCopy').draggable({
+              disabled: true
+            });
         }
     });
      $('#pieceNineCopy').draggable();
@@ -84,6 +109,10 @@ $(function() {
             var dropped = ui.draggable;
             var droppedOn = $(this);
             $(dropped).detach().css({top: 0,left: 0}).appendTo(droppedOn);
+            $('#pieceNineCopy').draggable({
+              disabled: true
+            });
+
         }
     });
       
