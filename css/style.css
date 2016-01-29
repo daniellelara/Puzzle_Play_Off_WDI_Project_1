@@ -39,8 +39,55 @@ ul {
   height: 98px;
   width: 98px;
   border: 1px solid black;
-  background-color: blue;
+  background-color: transparent;
   display: inline-block;
 }
 
 
+
+#pieceTwo, #pieceThree {
+  margin-left: -20px;
+}
+
+#pieceFour, #pieceFive, #pieceSix {
+  margin-top: -10px;
+}
+#pieceFive, #pieceSix {
+  margin-left: -10px;
+}
+
+#pieceSeven, #pieceEight, #pieceNine {
+  margin-top: -10px;
+}
+
+#pieceEight, #pieceNine {
+  margin-left: -10px;
+}
+
+
+#pieceOneCopy {
+  
+  background-color: red;
+}
+
+#pieceTwoCopy, #pieceThreeCopy {
+  background-image: url('../images/piece.png')
+}
+
+
+#screenTwo {
+  width: 80px;
+  height: 22px;
+  background-color: #444;
+  background-image: linear-gradient(300deg, rgba(255,255,255,0.1), rgba(255,255,255,0.1) 20%, rgba(255,255,255,0.5) 10%, rgba(255,255,255,0.1), rgba(255,255,255,0.1));
+  border-radius: 4px;
+  margin: auto;
+  position: relative;
+  top: 75px;
+  text-align: center;
+  font-family: 'PT Mono', monospace;
+  color: #fff;
+  line-height: 22px;
+  font-size: 18px;
+  padding: 5px;
+}
