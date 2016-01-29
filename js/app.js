@@ -2,24 +2,95 @@ console.log("its");
 $(function() {
 
 
-    //$( ".draw-piece" ).draggable();
+     $('#pieceOneCopy').draggable();
+
     $('#pieceOne').droppable({
-        tolerance: 'fit'
+        drop: function(ev, ui) {
+            var dropped = ui.draggable;
+            var droppedOn = $(this);
+            $(dropped).detach().css({top: 0,left: 0}).appendTo(droppedOn);
+
+        }
     });
 
-    $('#pieceOneCopy').draggable();
+     $('#pieceTwoCopy').draggable();
 
-
-    $('#pieceOneCopy').droppable({
-        greedy: true,
-        tolerance: 'touch',
-        drop: function(event,ui){
-            ui.draggable.draggable('option','revert',true);
+    $('#pieceTwo').droppable({
+        drop: function(ev, ui) {
+            var dropped = ui.draggable;
+            var droppedOn = $(this);
+            $(dropped).detach().css({top: 0,left: 0}).appendTo(droppedOn);
         }
-    });  
+    });
+     $('#pieceThreeCopy').draggable();
+
+    $('#pieceThree').droppable({
+        drop: function(ev, ui) {
+            var dropped = ui.draggable;
+            var droppedOn = $(this);
+            $(dropped).detach().css({top: 0,left: 0}).appendTo(droppedOn);
+        }
+    });
+     $('#pieceFourCopy').draggable();
+
+    $('#pieceFour').droppable({
+        drop: function(ev, ui) {
+            var dropped = ui.draggable;
+            var droppedOn = $(this);
+            $(dropped).detach().css({top: 0,left: 0}).appendTo(droppedOn);
+        }
+    });
+
+     $('#pieceFiveCopy').draggable();
+
+    $('#pieceFive').droppable({
+        drop: function(ev, ui) {
+            var dropped = ui.draggable;
+            var droppedOn = $(this);
+            $(dropped).detach().css({top: 0,left: 0}).appendTo(droppedOn);
+        }
+    });
+     $('#pieceSixCopy').draggable();
+
+    $('#pieceSix').droppable({
+        drop: function(ev, ui) {
+            var dropped = ui.draggable;
+            var droppedOn = $(this);
+            $(dropped).detach().css({top: 0,left: 0}).appendTo(droppedOn);
+        }
+    });
+     $('#pieceSevenCopy').draggable();
+
+    $('#pieceSeven').droppable({
+        drop: function(ev, ui) {
+            var dropped = ui.draggable;
+            var droppedOn = $(this);
+            $(dropped).detach().css({top: 0,left: 0}).appendTo(droppedOn);
+        }
+    });
+     $('#pieceEightCopy').draggable();
+
+    $('#pieceEight').droppable({
+        drop: function(ev, ui) {
+            var dropped = ui.draggable;
+            var droppedOn = $(this);
+            $(dropped).detach().css({top: 0,left: 0}).appendTo(droppedOn);
+        }
+    });
+     $('#pieceNineCopy').draggable();
+
+    $('#pieceNine').droppable({
+        drop: function(ev, ui) {
+            var dropped = ui.draggable;
+            var droppedOn = $(this);
+            $(dropped).detach().css({top: 0,left: 0}).appendTo(droppedOn);
+        }
+    });
       
 
   });
+
+
 
 
 /*$( ".draw-piece" ).draggable();

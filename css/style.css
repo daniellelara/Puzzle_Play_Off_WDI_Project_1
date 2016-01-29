@@ -36,11 +36,11 @@ ul {
 }
 
 .draw-piece{
-  height: 88px;
-  width: 88px;
+  height: 98px;
+  width: 98px;
   border: 1px solid black;
   background-color: blue;
   display: inline-block;
 }
 
-#draggable { width: 150px; height: 150px; padding: 0.5em; }
+
