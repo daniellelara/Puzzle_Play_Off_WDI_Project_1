@@ -3,9 +3,9 @@ body {
 }
 
 .container {
-  height: 300px;
-  width: 300px;
-  border: 1px solid black;
+  height: 310px;
+  width: 310px;
+  border: 1px solid transparent;
   
 
 }
@@ -18,9 +18,9 @@ ul {
   }
 
 .puzzle-piece{
-  height: 98px;
-  width: 98px;
-  border: 1px solid black;
+  height: 100px;
+  width: 100px;
+  border: 1px solid transparent;
   float: left;
 
 
@@ -29,50 +29,79 @@ ul {
 .puzzle-draw {
   height: 500px;
   width: 500px;
-  border: 1px solid black;
+  border: 1px solid transparent;
 
 
   
 }
 
 .draw-piece{
-  height: 98px;
-  width: 98px;
-  border: 1px solid black;
+  height: 100px;
+  width: 100px;
+  border: 1px solid transparent;
   background-color: transparent;
   display: inline-block;
 }
 
+#pieceFour, #pieceSix {
+  margin-top: -28px;
+}
 
+#pieceSix {
+  margin-left: -19px;
+}
 
 #pieceTwo, #pieceThree {
-  margin-left: -20px;
+  margin-left: -19px;
 }
 
-#pieceFour, #pieceFive, #pieceSix {
-  margin-top: -10px;
+#pieceTwo {
+  margin-left: -21px;
 }
-#pieceFive, #pieceSix {
-  margin-left: -10px;
-}
-
-#pieceSeven, #pieceEight, #pieceNine {
-  margin-top: -10px;
-}
-
-#pieceEight, #pieceNine {
-  margin-left: -10px;
+#pieceFive {
+  margin-left: -29px;
+  margin-top: -19px;
 }
 
 
-#pieceOneCopy {
+
+#pieceEight  {
+  margin-left: -175px;
+  margin-top: 58px;
   
-  background-color: red;
 }
 
-#pieceTwoCopy, #pieceThreeCopy {
-  background-image: url('../images/piece.png')
+#pieceNine  {
+  margin-left: -20px;
+  margin-top: -22px;
+  
+  
+  
+
 }
+
+#pieceSeven {
+margin-left: -256px;
+margin-top: 50px;
+}
+
+
+
+
+
+
+#pieceOneCopy { background-image: url('../images/pieceone.png');}
+#pieceTwoCopy {background-image: url('../images/piecetwo.png');}
+#pieceThreeCopy {background-image: url('../images/piecethree.png')}
+#pieceFourCopy { background-image: url('../images/piecefour.png');}
+#pieceFiveCopy {
+  background-image: url('../images/piecefive.png');
+ 
+}
+#pieceSixCopy {background-image: url('../images/piecesix.png')}
+#pieceSevenCopy { background-image: url('../images/pieceseven.png');}
+#pieceEightCopy {background-image: url('../images/pieceeight.png');}
+#pieceNineCopy {background-image: url('../images/piecenine.png')}
 
 
 #screenTwo {
