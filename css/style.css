@@ -1,11 +1,17 @@
 body {
-  box-sizing: border-box;
+  
+  
+  background-image: url("http://www.revolutionsinwood.com/img/background/v.jpg");
+  background-repeat: no-repeat;
 }
 
 .container {
   height: 310px;
   width: 310px;
-  border: 1px solid transparent;
+  border: 3px solid white;
+  background-color: #472154;
+  margin-top: 100px;
+  margin-left: 50px;
   
 
 }
@@ -27,9 +33,13 @@ ul {
 }
 
 .puzzle-draw {
-  height: 500px;
-  width: 500px;
-  border: 1px solid transparent;
+  height: 350px;
+  width: 350px;
+  border: 1px solid white;
+  float: right;
+  margin-bottom: 400px;
+  margin-top: -310px;
+  
 
 
   
@@ -38,7 +48,7 @@ ul {
 .draw-piece{
   height: 100px;
   width: 100px;
-  border: 1px solid transparent;
+  border: 1px dotted transparent;
   background-color: transparent;
   display: inline-block;
 }
