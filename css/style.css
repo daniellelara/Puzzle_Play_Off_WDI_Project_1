@@ -1,8 +1,43 @@
 body {
   
   
-  background-image: url("http://www.revolutionsinwood.com/img/background/v.jpg");
-  background-repeat: no-repeat;
+  background-image: url("http://twcimages.blob.core.windows.net/product/brickwork-exposed-brick-texture-fwht-l.jpg");
+  background-repeat: repeat;
+}
+
+.welcome-page {
+  position: relative;
+  width: 100%;
+  margin-top: 100px;
+}
+
+.welcome-page img {
+margin-left: 200px;
+}
+
+p {
+  text-align: center;
+}
+
+h1 {
+  text-align: center;
+}
+button {
+    width: 100px;
+    height: 100px;
+    border: 5px solid black;
+    border-radius: 10px;
+    background: #bef1ff;
+    box-shadow: inset 0 0 20px #f0484c;
+    background-size: contain;
+    display: inline-block;
+    padding: 1px;
+    cursor: pointer;
+    width: 30%;
+    
+    
+
+
 }
 
 img {
@@ -13,7 +48,7 @@ img {
 }
 
 .container {
-  height: 270px;
+  height: 300px;
   width: 300px;
   border: 3px solid white;
   background-color: #c4d8e4;
@@ -41,12 +76,12 @@ ul {
 }
 
 .puzzle-draw {
-  height: 350px;
-  width: 350px;
+  height: 400px;
+  width: 400px;
   border: 1px solid white;
   float: right;
   margin-bottom: 400px;
-  margin-top: -310px;
+  margin-top: -610px;
   
 
 
@@ -61,68 +96,29 @@ ul {
   display: inline-block;
 }
 
-#pieceFour, #pieceSix {
-  margin-top: -28px;
+
+#pieceFour, #pieceSix {margin-top: -28px;}
+#pieceSix {margin-left: -19px;}
+#pieceTwo, #pieceThree { margin-left: -19px;}
+#pieceTwo {margin-left: -21px;}
+#pieceFive {margin-left: -29px; margin-top: -19px;}
+#pieceEight  {margin-left: -175px; margin-top: 58px;}
+#pieceNine  { margin-left: -20px; margin-top: -22px;}
+#pieceSeven { margin-left: -256px; margin-top: 50px;}
+
+#pieceOneCopy { background-image: url('../images/pieceone.png');
 }
-
-#pieceSix {
-  margin-left: -19px;
-}
-
-#pieceTwo, #pieceThree {
-  margin-left: -19px;
-}
-
-#pieceTwo {
-  margin-left: -21px;
-}
-#pieceFive {
-  margin-left: -29px;
-  margin-top: -19px;
-}
-
-
-
-#pieceEight  {
-  margin-left: -175px;
-  margin-top: 58px;
-  
-}
-
-#pieceNine  {
-  margin-left: -20px;
-  margin-top: -22px;
-  
-  
-  
-
-}
-
-#pieceSeven {
-margin-left: -256px;
-margin-top: 50px;
-}
-
-
-
-
-
-
-#pieceOneCopy { background-image: url('../images/pieceone.png');}
 #pieceTwoCopy {background-image: url('../images/piecetwo.png');}
 #pieceThreeCopy {background-image: url('../images/piecethree.png')}
 #pieceFourCopy { background-image: url('../images/piecefour.png');}
-#pieceFiveCopy {
-  background-image: url('../images/piecefive.png');
- 
-}
+#pieceFiveCopy {background-image: url('../images/piecefive.png');}
 #pieceSixCopy {background-image: url('../images/piecesix.png')}
 #pieceSevenCopy { background-image: url('../images/pieceseven.png');}
 #pieceEightCopy {background-image: url('../images/pieceeight.png');}
 #pieceNineCopy {background-image: url('../images/piecenine.png')}
 
 
-#screenTwo {
+#screenTwo, #screenThree {
   width: 80px;
   height: 22px;
   background-color: #444;
@@ -138,3 +134,71 @@ margin-top: 50px;
   font-size: 18px;
   padding: 5px;
 }
+
+
+
+
+
+
+.hard-level .container {
+  height: 400px;
+  width: 400px;
+  border: 3px solid white;
+  background-color: #c4d8e4;
+  margin-top: 100px;
+  margin-left: 50px;
+  border-radius: 15px;
+  
+}
+
+.hard-level .puzzle-piece {
+  height: 98px;
+  width: 98px;
+  border: 1px solid black;
+  float: left;
+
+
+}
+
+.hard-level .puzzle-draw {
+  height: 350px;
+  width: 350px;
+  border: 1px solid white;
+  margin-right: 0px;
+  
+ 
+}
+
+.hard-level .draw-piece {
+  height: 98px;
+  width: 98px;
+  border: 0px hidden transparent;
+  background-color: transparent;
+  display: inline-block;
+}
+
+#pieceOnehardCopy { background-image: url('../images/pieceonehard.png');background-repeat: no-repeat;}
+#pieceTwohardCopy {background-image: url('../images/piecetwohard.png');background-repeat: no-repeat;}
+#pieceThreehardCopy {background-image: url('../images/piecethreehard.png'); background-repeat: no-repeat;}
+#pieceFourhardCopy { background-image: url('../images/piecefourhard.png'); background-repeat: no-repeat;}
+#pieceFivehardCopy {background-image: url('../images/piecefivehard.png');background-repeat: no-repeat;}
+#pieceSixhardCopy {background-image: url('../images/piecesixhard.png'); background-repeat: no-repeat;}
+#pieceSevenhardCopy { background-image: url('../images/piecesevenhard.png'); background-repeat: no-repeat;}
+#pieceEighthardCopy {background-image: url('../images/pieceeighthard.png'); background-repeat: no-repeat;}
+#pieceNinehardCopy {background-image: url('../images/pieceninehard.png'); background-repeat: no-repeat;}
+#pieceTenhardCopy { background-image: url('../images/piecetenhard.png'); background-repeat: no-repeat;}
+#pieceElevenhardCopy {background-image: url('../images/pieceelevenhard.png'); background-repeat: no-repeat;}
+#pieceTwelvehardCopy {background-image: url('../images/piecetwelvehard.png'); background-repeat: no-repeat;}
+#pieceThirteenhardCopy { background-image: url('../images/piecethirteenhard.png'); background-repeat: no-repeat;}
+#pieceFourteenhardCopy {background-image: url('../images/piecefourteenhard.png'); background-repeat: no-repeat;}
+#pieceFifteenhardCopy {background-image: url('../images/piecefifteenhard.png'); background-repeat: no-repeat;}
+#pieceSixteenhardCopy {background-image: url('../images/piecesixteenhard.png'); background-repeat: no-repeat;}
+
+#pieceTwohard, #pieceThreehard, #pieceFourhard, #pieceSixhard, #pieceSevenhard, #pieceEighthard, #pieceTenhard, #pieceElevenhard, #pieceTwelvehard, #pieceFourteenhard, #pieceFifteenhard, #pieceSixteenhard {
+  margin-left: -15px;
+}
+
+#pieceFivehard, #pieceSixhard, #pieceSevenhard, #pieceEighthard, #pieceNinehard, #pieceTenhard, #pieceElevenhard, #pieceTwelvehard, #pieceThirteenhard, #pieceFourteenhard, #pieceFifteenhard, #pieceSixteenhard {
+  margin-top: -15px;
+}
+

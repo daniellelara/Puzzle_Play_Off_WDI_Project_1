@@ -1,0 +1,49 @@
+//drag n' drop
+//2 players
+//time
+/css
+
+//extras
+//sharing
+//using own image
+//chooing multiple images
+//difficulty level
+//background music
+//draw - using toggle
+
+
+//start with drag and drop
+
+//begin with 9 x9 div table to test drag and drop
+
+//make jigsaw pieces on photoshop
+// box siding border box
+
+
+//DRAG AND DROP
+//1. learn drag function
+//2. apply it to template
+//3. drag invoked number to determine whether placed in correct place
+//4. make certain pieces only drop in certain places. :
+if id !== id put piece back in original place using destroy() then enable on next persons turn
+//5.
+
+
+puzzle functions to make:
+
+1/ class that changes on complete of background
+2/ restart puzzle
+3/function that snaps piece into place and on drop in right place reveals background piece
+4/ function for timer 
+5//on end of player 1 , resets puzzle for  playr 2
+
+
+//css transform to change axis of pieces
+//add music
+
+
+//what i neeed help on tomorrow:
+
+1. shuffle pieces
+2. get rid of border
+3.return to div

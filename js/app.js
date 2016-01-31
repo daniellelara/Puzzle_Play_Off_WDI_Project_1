@@ -4,33 +4,54 @@ $(function() {
   var audio = new Audio ('sounds/buttonsound.mp3');
   var audioTwo = new Audio ('sounds/magic.wav');
   var audioThree = new Audio ('sounds/return.mp3');
-  
-  $(".welcome-page").show();  $(".easy-level").hide();
-
-  $( "button" ).click(function() {
-    $(".easy-level").show();  $(".welcome-page").hide();
-  
-
-  var $countdown = $('#screenTwo');
+  var $countdown;
   var count = 0
   var winner = [];
-  var countUp = setInterval(function(){
-      count += 1
-      var padOne = pad(count);
-      $countdown.text(padOne);
+  var countUp;
+  var levelone = 9;
+  var leveltwo = 16;
+  
+  $(".welcome-page").show();  $(".easy-level").hide(); $(".hard-level").hide();
+
+  //when you press easy
+
+    $( "#easy" ).click(function() {
       
-
-  },1000);
-
-  $(".draw-piece").data("left", $(".draw-piece").position().left).data("top", $(".draw-piece").position().top);
+      $(".easy-level").show();  $(".welcome-page").hide(); 
     
-    playGame();
+
+      $countdown = $('#screenTwo');
+      countUp = setInterval(function(){
+          count += 1
+          var padOne = pad(count);
+          $countdown.text(padOne);
+      },1000);
+
+      playGame(levelone);
+      
+    })
+
+  //when you press hard
+
+    $( "#hard" ).click(function() {
+      $(".hard-level").show();  $(".welcome-page").hide(); 
     
-  })
+
+      $countdown = $('#screenThree');
+      countUp = setInterval(function(){
+        count += 1;
+        console.log(count);
+        var padOne = pad(count);
+        $countdown.text(padOne);
+      },1000);
+
+      playGame(leveltwo);
+      
+    })
 
   
 
- function playGame() {
+ function playGame(level) {
     $('.draw-piece').draggable();
     $('.puzzle-piece').droppable({
         drop: function(ev, ui) {
@@ -41,9 +62,9 @@ $(function() {
                 $(dropped).draggable({
                   disabled: true
                 });
-                audio.play();
+              audio.play();
             }
-           checkForWin(countUp, count); 
+        checkForWin(level, countUp, count); 
         } 
 
     });
@@ -53,10 +74,10 @@ $(function() {
 
   function pad(count) { return (count<10) ? ("0" + count.toString()) : (count.toString()); } 
 
-  function checkForWin() {
+  function checkForWin(level) {
     
     var howMany = $('.ui-draggable-disabled').length;
-    if (howMany === 9){
+    if (howMany === level){
       audioTwo.play();
       console.log("game over. well done");
       clearTimeout(countUp);
@@ -65,6 +86,7 @@ $(function() {
       if (winner.length === 1) {
           alert("it is players two turn")
           resetBoard();
+
           playGame();
       }
       else if (winner.length === 2) {
@@ -85,10 +107,18 @@ $(function() {
   }
 
 function resetBoard() {
-    var $pieces = $( "li.draw-piece" );
+    $pieces = $(".draw-piece" );
      
-    $pieces.appendTo(".puzzle-draw");
-    $pieces.randomize();
+    var dropped = $(".draw-piece" );
+    var droppedOn = $('.puzzle-piece');
+if (!!$(dropped).attr('id').match($(droppedOn).attr('id'))){
+                $(dropped).draggable({
+                  disabled: false
+                });
+                $('.easy-level .draw-piece').appendTo(".puzzle-draw");
+             
+  }              
+  
       
       // $(".draw-piece").animate({
       //     "left": $(".draw-piece").data("left"),
@@ -96,9 +126,9 @@ function resetBoard() {
 
       // });
 
-      $(".draw-piece").draggable({
-        disabled: false
-      });
+      
+
+      //$(".draw-piece").randomize();
 
       audioThree.play();
                        
