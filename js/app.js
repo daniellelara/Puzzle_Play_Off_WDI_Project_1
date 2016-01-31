@@ -3,8 +3,12 @@ $(function() {
 
   var audio = new Audio ('sounds/buttonsound.mp3');
   var audioTwo = new Audio ('sounds/magic.wav');
-  var audioThree = new Audio ('sounds/return.wav');
+  var audioThree = new Audio ('sounds/return.mp3');
   
+  $(".welcome-page").show();  $(".easy-level").hide();
+
+  $( "button" ).click(function() {
+    $(".easy-level").show();  $(".welcome-page").hide();
   
 
   var $countdown = $('#screenTwo');
@@ -21,11 +25,8 @@ $(function() {
   $(".draw-piece").data("left", $(".draw-piece").position().left).data("top", $(".draw-piece").position().top);
     
     playGame();
-
-    if (winner.length === 1){
-        playGame();
-
-    }
+    
+  })
 
   
 
@@ -50,7 +51,7 @@ $(function() {
   }
 
 
-function pad(count) { return (count<10) ? ("0" + count.toString()) : (count.toString()); } 
+  function pad(count) { return (count<10) ? ("0" + count.toString()) : (count.toString()); } 
 
   function checkForWin() {
     
@@ -78,59 +79,52 @@ function pad(count) { return (count<10) ? ("0" + count.toString()) : (count.toSt
             console.log("it is a draw");
           }
 
+      }
     }
+
   }
 
-}
-
 function resetBoard() {
+    var $pieces = $( "li.draw-piece" );
+     
+    $pieces.appendTo(".puzzle-draw");
+    $pieces.randomize();
       
-      $(".draw-piece").animate({
-          "left": $(".draw-piece").data("left"),
-          "top": $(".draw-piece").data("top")
+      // $(".draw-piece").animate({
+      //     "left": $(".draw-piece").data("left"),
+      //     "top": $(".draw-piece").data("top")
 
-      });
-      audioThree.play();
-      
+      // });
+
       $(".draw-piece").draggable({
-                        disabled: false
-                      });
-      
-      
+        disabled: false
+      });
+
+      audioThree.play();
                        
-      count = 0;
-      countUp = setInterval(function(){
-      count += 1
-      var padOne = pad(count);
-      $countdown.text(padOne);
+      var count = 0;
+      var countUp = setInterval(function(){
+        count += 1
+        var padOne = pad(count);
+        $countdown.text(padOne);
       
 
-  },1000);
-     // $('.draw-piece').shuffle();
+      },1000);
+    
  
 
 }
 
-    $.fn.shuffle = function() {
- 
-        var allElems = this.get(),
-            getRandom = function(max) {
-                return Math.floor(Math.random() * max);
-            },
-            shuffled = $.map(allElems, function(){
-                var random = getRandom(allElems.length),
-                    randEl = $(allElems[random]).clone(true)[0];
-                allElems.splice(random, 1);
-                return randEl;
-           });
- 
-        this.each(function(i){
-            $(this).replaceWith($(shuffled[i]));
-        });
- 
-        return $(shuffled);
- 
-    };
+
+$.fn.randomize = function(selector){
+    (selector ? this.find(selector) : this).parent().each(function(){
+        $(this).children(selector).sort(function(){
+            return Math.random() - 0.5;
+        }).detach().appendTo(this);
+    });
+
+    return this;
+};
  
 
  
