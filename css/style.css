@@ -1,8 +1,10 @@
+
 body {
   
   
   background-image: url("http://twcimages.blob.core.windows.net/product/brickwork-exposed-brick-texture-fwht-l.jpg");
   background-repeat: repeat;
+  font-family: "Brewsky";
 }
 
 .welcome-page {
@@ -13,10 +15,15 @@ body {
 
 .welcome-page img {
 margin-left: 200px;
+box-shadow: inset 0 0 60px #9dc8e3;
 }
 
 p {
   text-align: center;
+  font-size: 20px;
+  margin-left: 50px;
+  margin-right: 50px;
+  
 }
 
 h1 {
@@ -25,20 +32,28 @@ h1 {
 button {
     width: 100px;
     height: 100px;
-    border: 5px solid black;
+    border: 5px solid #9dc8e3;
     border-radius: 10px;
-    background: #bef1ff;
-    box-shadow: inset 0 0 20px #f0484c;
+    background: red;
+    box-shadow: inset 0 0 80px #9dc8e3;
     background-size: contain;
     display: inline-block;
     padding: 1px;
     cursor: pointer;
-    width: 30%;
-    
-    
+    width: 20%;
+    color: #61a269;
+    font-size: 40px;
+    font-family: "Brewsky";
 
-
+    
 }
+
+#easy {
+  margin-left: 250px;
+  background: yellow;
+}
+
+
 
 img {
   border-radius: 15px;
@@ -78,10 +93,10 @@ ul {
 .puzzle-draw {
   height: 400px;
   width: 400px;
-  border: 1px solid white;
+  border: 1px solid transparent;
   float: right;
-  margin-bottom: 400px;
-  margin-top: -610px;
+  margin-top: -300px;
+  
   
 
 
@@ -124,15 +139,15 @@ ul {
   background-color: #444;
   background-image: linear-gradient(300deg, rgba(255,255,255,0.1), rgba(255,255,255,0.1) 20%, rgba(255,255,255,0.5) 10%, rgba(255,255,255,0.1), rgba(255,255,255,0.1));
   border-radius: 4px;
-  margin: auto;
-  position: relative;
-  top: 75px;
+  
   text-align: center;
   font-family: 'PT Mono', monospace;
   color: #fff;
   line-height: 22px;
   font-size: 18px;
   padding: 5px;
+  
+
 }
 
 
@@ -165,6 +180,7 @@ ul {
   width: 350px;
   border: 1px solid white;
   margin-right: 0px;
+  margin-top: -500px;
   
  
 }
