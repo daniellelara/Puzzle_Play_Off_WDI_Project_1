@@ -20,8 +20,8 @@ $(function() {
       $(".interlude").show().fadeOut(3000);
 
       $(".easy-level").delay(4000).fadeIn();  
- 
-      playGame(levelOne);
+     
+      playGame(levelOne, $('#screenTwo'));
       
     
 
@@ -31,19 +31,21 @@ $(function() {
   //when you press hard
 
     $( "#hard" ).click(function() {
-      $(".hard-level").show();  $(".welcome-page").hide(); 
+     $(".welcome-page").hide(); 
     
+      $(".interlude").show().fadeOut(3000);
 
-      playGame(levelTwo);
+      $(".hard-level").delay(4000).fadeIn();
+      playGame(levelTwo, $('#screenThree'));
       
     })
 
   
 //game function
- function playGame(level) {
+ function playGame(level, $countdown) {
   //set timer
   var count = -4;
-  $countdown = $('#screenTwo');
+  
   countUp = setInterval(function(){
       count += 1
       var padOne = pad(count);
@@ -66,7 +68,7 @@ $(function() {
             }
            
 
-        checkForWin(level, countUp, count); 
+        checkForWin(level, countUp, count, $countdown); 
         } 
 
     });
@@ -79,7 +81,7 @@ $(function() {
 //time count set
   function pad(count) { return (count<10) ? ("0" + count.toString()) : (count.toString()); } 
 //how game is played after first winner
-  function checkForWin(level, countUp, count) {
+  function checkForWin(level, countUp, count, $countdown) {
     var $arr = $(level + " .draw-piece");
     var howMany = $('.ui-draggable-disabled').length;
     if (howMany === $arr.length){
@@ -93,7 +95,7 @@ $(function() {
           $(".playerTwo").show().fadeOut(3000);
           $(level).delay(4000).fadeIn(); 
           resetBoard(level)
-          playGame(level);
+          playGame(level, $countdown);
       }
       else if (winner.length === 2) {
           var min = Math.min.apply(Math, winner);
