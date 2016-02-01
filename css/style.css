@@ -1,9 +1,10 @@
 @import url(http://db.onlinewebfonts.com/c/9cceaeffe3cdda2e729ca1133f10c8f2?family=Brewsky);
 body {
-  background-image: url("http://twcimages.blob.core.windows.net/product/brickwork-exposed-brick-texture-fwht-l.jpg");
-  background-repeat: repeat;
-  font-family: "Brewsky";
+  background: linear-gradient( 90deg, #b9b6c1, #a5a09d);  
+  font-family: Calibri;
   text-align: center;
+  font-size: 20px;
+  color: #d6edf0;
 }
 
 .welcome-page {
@@ -14,85 +15,111 @@ body {
 
 .text{
   width: 600px;
-  height: 150px;
+  height: 100px;
   margin: 0 auto;
   background-color: transparent;
   padding: 20px;
-  font-family: 'Covered By Your Grace', cursive;
-  font-size: 24px;
-  text-shadow: 1px 4px 6px #def, 0 0 0 #6a6663;, 1px 4px 6px #def;
+  font-family: Calibri;
+  font-size: 18px;
+  letter-spacing: 10;
+  text-align: left;  
 
 }
 
 .welcome-page img {
 margin: 0 auto;
-box-shadow: inset 0 0 60px #9dc8e3;
+margin-left: -120px;
+
 display: inline-block;
-border-radius: 15px;
-border: 4px solid #d17b46;
+/*border-radius: 15px;*/
+
+}
+
+.logo {
+
+  text-align: left;
+
 }
 
 .logo img {
-margin: 0 auto;
-box-shadow: inset 0 0 60px #9dc8e3;
+
+text-align: left;
+
 display: inline-block;
-border-radius: 15px;
-border: 4px solid #d17b46;
+padding: 0px;
+
+}
+
+.logoOne img {
+
+margin-left: -415px;
+
+display: inline-block;
+/*border-radius: 15px;*/
 }
 
 p {
-  text-align: center;
+  text-align: left;
   font-size: 40px;
-  color: #605e5d;
+  color: white;
+  line-height: 140%;
+
  
 
   
 }
 
 h1 {
-  text-align: center;
-  color: #605e5d;
+  text-align: left;
+  color: white;
+  line-height: 140%;
 }
-button {
-    width: 100px;
-    height: 100px;
-    border: 5px solid #9dc8e3;
-    border-radius: 10px;
-    background: red;
-    box-shadow: inset 0 0 80px #9dc8e3;
-    background-size: contain;
+
+#easy, #hard {
+    margin-top: 20px;
     display: inline-block;
     padding: 1px;
     cursor: pointer;
-    width: 20%;
-    color: #61a269;
-    font-size: 40px;
-    font-family: "Brewsky";
-
-    
+    color: #d6edf0;
+    font-size: 30px;
+    font-family: Calibri;
 }
 
-#easy {
-  
-  background: yellow;
+div#easy:hover {
+  text-decoration: underline;
+}
+
+div#hard:hover {
+  text-decoration: underline;
+}
+
+.interlude, .playerTwo, .winnerOne, .winnerTwo, .draw {
+  margin: 0 auto;
+  margin-top: 30vh;
 }
 
 
+
+.easy-level {
+  margin-left: 10vw;
+  text-align: left;
+}
 
 img {
-  border-radius: 15px;
+ 
   margin-left: 300px;
   border: 1px solid white;
   margin-top: 10px;
 }
 
 .container {
-  height: 275px;
-  width: 275px;
+  height: 300px;
+  width: 300px;
   border: 3px solid white;
-  background-color: #c4d8e4;
-  border-radius: 15px;
+  background-color: #d6edf0;
   display: inline-block;
+  margin-right: 20px;
+  
   
 
 }
@@ -118,6 +145,7 @@ ul .puzzle-table {
   width: 400px;
   border: 1px solid transparent;
   display: inline-block;
+
   
   
   
@@ -160,13 +188,9 @@ ul .puzzle-table {
   width: 80px;
   height: 22px;
   background-color: #444;
-  background-image: url('../images/timer.png');
-  background-repeat: no-repeat;
-  border-radius: 4px;
-  
-  text-align: center;
-  font-family: 'Covered By Your Grace', cursive;
-  color: #fff;
+  text-align: left;
+  font-size: 30px;
+  font-family: Calibri;
   line-height: 22px;
   font-size: 18px;
   padding: 5px;
@@ -185,7 +209,7 @@ ul .puzzle-table {
   border: 3px solid white;
   background-color: #c4d8e4;
   display: inline-block;
-  border-radius: 15px;
+  
   
 }
 
@@ -200,8 +224,8 @@ ul .puzzle-table {
 
 .hard-level .puzzle-draw {
   height: 350px;
-  width: 350px;
-  border: 1px solid white;
+  width: 500px;
+  border: 1px solid transparent;
   display: inline-block;
   
  
