@@ -62,14 +62,20 @@ $(function() {
                 $(dropped).draggable({
                   disabled: true
                 });
+
               audio.play();
             }
+           
+
         checkForWin(level, countUp, count); 
         } 
 
     });
 
   }
+
+
+
 
 
   function pad(count) { return (count<10) ? ("0" + count.toString()) : (count.toString()); } 
@@ -85,8 +91,7 @@ $(function() {
       console.log(winner);
       if (winner.length === 1) {
           alert("it is players two turn")
-          resetBoard();
-
+          resetBoard()
           playGame();
       }
       else if (winner.length === 2) {
@@ -107,28 +112,19 @@ $(function() {
   }
 
 function resetBoard() {
-    $pieces = $(".draw-piece" );
+    $pieces = $(".easy-level li.draw-piece" );
+
+
+    $pieces.appendTo(".easy-level .puzzle-draw");
+    $pieces.randomize();
+
+    $('.draw-piece').draggable({
+      disabled: false
+    });
+ 
+      
+
      
-    var dropped = $(".draw-piece" );
-    var droppedOn = $('.puzzle-piece');
-if (!!$(dropped).attr('id').match($(droppedOn).attr('id'))){
-                $(dropped).draggable({
-                  disabled: false
-                });
-                $('.easy-level .draw-piece').appendTo(".puzzle-draw");
-             
-  }              
-  
-      
-      // $(".draw-piece").animate({
-      //     "left": $(".draw-piece").data("left"),
-      //     "top": $(".draw-piece").data("top")
-
-      // });
-
-      
-
-      //$(".draw-piece").randomize();
 
       audioThree.play();
                        
@@ -148,6 +144,7 @@ if (!!$(dropped).attr('id').match($(droppedOn).attr('id'))){
 
 $.fn.randomize = function(selector){
     (selector ? this.find(selector) : this).parent().each(function(){
+      console.log($(this));
         $(this).children(selector).sort(function(){
             return Math.random() - 0.5;
         }).detach().appendTo(this);
@@ -155,9 +152,6 @@ $.fn.randomize = function(selector){
 
     return this;
 };
- 
-
- 
 
 
 
