@@ -10,66 +10,70 @@ $(function() {
   var levelOne = '.easy-level';  
   var levelTwo = '.hard-level';
   //one load
-  $(".welcome-page").show();  $(".easy-level").hide(); $(".hard-level").hide(); $(".interlude").hide(); $(".playerTwo").hide(); $(".winnerOne").hide(); $(".winnerTwo").hide(); $(".draw").hide()
+  $(".welcome-page").show();
+  $(".easy-level").hide();
+  $(".hard-level").hide();
+  $(".interlude").hide();
+  $(".playerTwo").hide();
+  $(".winnerOne").hide();
+  $(".winnerTwo").hide();
+  $(".draw").hide();
 
   //when you click easy
 
-    $( "#easy" ).click(function() {
-      $(".welcome-page").hide(); 
+  $( "#easy" ).click(function() {
+    $(".welcome-page").hide(); 
 
-      $(".interlude").show().fadeOut(3000);
+    $(".interlude").show().fadeOut(3000);
 
-      $(".easy-level").delay(4000).fadeIn();  
-     
-      playGame(levelOne, $('#screenTwo'));
-      
-    
-
-    })
+    $(".easy-level").delay(4000).fadeIn();  
+   
+    playGame(levelOne, $('#screenTwo'));
+  });
 
 
   //when you press hard
 
-    $( "#hard" ).click(function() {
-     $(".welcome-page").hide(); 
+  $( "#hard" ).click(function() {
+   $(".welcome-page").hide(); 
+  
+    $(".interlude").show().fadeOut(3000);
+
+    $(".hard-level").delay(4000).fadeIn();
+    playGame(levelTwo, $('#screenThree'));
     
-      $(".interlude").show().fadeOut(3000);
-
-      $(".hard-level").delay(4000).fadeIn();
-      playGame(levelTwo, $('#screenThree'));
-      
-    })
+  });
 
   
-//game function
- function playGame(level, $countdown) {
-  //set timer
-  var count = -4;
-  
-  countUp = setInterval(function(){
+  //game function
+  function playGame(level, $countdown) {
+    //set timer
+    var count = -4;
+    
+    countUp = setInterval(function(){
       count += 1
       var padOne = pad(count);
       $countdown.text(padOne);
-  },1000);
-  //make pieces draggable
+    },1000);
+
+    //make pieces draggable
     $('.draw-piece').draggable();
     $('.puzzle-piece').droppable({
-        drop: function(ev, ui) {
-            var dropped = ui.draggable;
-            var droppedOn = $(this);
-            //if dropped on same id, draggeble taken off
-            $(dropped).detach().css({top: 0,left: 0}).appendTo(droppedOn);
-            if (!!$(dropped).attr('id').match($(droppedOn).attr('id'))){
-                $(dropped).draggable({
-                  disabled: true
-                });
+      drop: function(ev, ui) {
+        var dropped = ui.draggable;
+        var droppedOn = $(this);
+        //if dropped on same id, draggeble taken off
+        $(dropped).detach().css({top: 0,left: 0}).appendTo(droppedOn);
 
-              audio.play();
-            }
-           
-
+        if (!!$(dropped).attr('id').match($(droppedOn).attr('id'))) {
+          $(dropped).draggable({
+            disabled: true
+          });
+          audio.play();
+        }
+         
         checkForWin(level, countUp, count, $countdown); 
-        } 
+      }
 
     });
 
@@ -101,28 +105,33 @@ $(function() {
           var min = Math.min.apply(Math, winner);
           if (winner[0] === min) {
             $(level).hide();
-            $(".winnerOne").show().fadeOut(3000);
-            $(".welcome-page").delay(4000).fadeIn(); 
+            $(".winnerOne").show().fadeOut(5000);
+            pageReset(level)
+            $(".welcome-page").delay(5000).fadeIn(); 
+            
           }
           else if (winner[1] === min) {
             $(level).hide();
-            $(".winnerTwo").show().fadeOut(3000);
-            $(".welcome-page").delay(4000).fadeIn(); 
+            $(".winnerTwo").show().fadeOut(5000);
+            pageReset(level);
+            $(".welcome-page").delay(5000).fadeIn(); 
+            
           }
           else {
             $(level).hide();
-            $(".draw").show().fadeOut(3000);
-            $(".welcome-page").delay(4000).fadeIn(); 
+            $(".draw").show().fadeOut(5000);
+            pageReset(level);
+            $(".welcome-page").delay(5000).fadeIn(); 
+            
           }
 
       }
     }
 
   }
-//revert peices back to normal place and shuffle
-function resetBoard(level) {
+  //revert peices back to normal place and shuffle
+  function resetBoard(level) {
     $pieces = $(level + " li.draw-piece");
-
 
     $pieces.appendTo($(level + " .puzzle-draw"));
     $pieces.randomize();
@@ -131,7 +140,7 @@ function resetBoard(level) {
       disabled: false
     });
     audioThree.play();
-    }
+  }
 
 //shuffle li elements
 $.fn.randomize = function(selector){
@@ -144,6 +153,19 @@ $.fn.randomize = function(selector){
 
     return this;
 };
+
+function pageReset(level) {
+
+  $pieces.appendTo($(level + " .puzzle-draw"));
+  $pieces.randomize();
+
+  $('.draw-piece').draggable({
+    disabled: false
+  });
+
+  winner = [];
+
+}
 
 
 
