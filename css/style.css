@@ -60,7 +60,7 @@ h1 {
   line-height: 140%;
 }
 
-#easy, #hard {
+#easy, #hard, #space {
     margin-top: 30px;
     display: inline-block;
     padding: 1px;
@@ -97,14 +97,15 @@ div#hard:hover {
 }
 
 .container {
-  height: 300px;
-  width: 300px;
+  height: 270px;
+  width: 280px;
   border: 3px solid white;
   background-color: #d6edf0;
   display: inline-block;
   margin-right: 20px;
+  padding-left: 20px;
+  padding-top: 10px;
 
-  
 }
 
 ul .puzzle-table {
@@ -136,9 +137,10 @@ ul .puzzle-table {
   border: 1px hidden transparent;
   background-color: transparent;
   display: inline-block;
+  cursor: pointer;
 }
 
-.gameover {
+.gameover, .gameoverone {
   cursor: pointer;
   width: 100px;
 }
@@ -185,19 +187,21 @@ ul .puzzle-table {
 }
 
 .hard-level .container {
-    height: 400px;
-    width: 400px;
+    height: 370px;
+    width: 347px;
     border: 3px solid white;
     background-color: #d6edf0;
     display: inline-block;
     margin-right: 20px;
+    padding-top: 30px;
+    padding-left: 10px;
    
 }
 
 .hard-level .puzzle-piece {
   height: 98px;
   width: 98px;
-  border: 1px solid transparent;
+  border: 0px solid transparent;
   float: left;
 }
 
@@ -216,6 +220,7 @@ ul .puzzle-table {
   border: 0px hidden transparent;
   background-color: transparent;
   display: inline-block;
+  cursor: pointer;
 }
 
 #pieceOnehardCopy { background-image: url('../images/pieceonea.png');background-repeat: no-repeat;}

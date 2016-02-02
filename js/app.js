@@ -37,6 +37,7 @@ $(function() {
       winner = [];
       clearTimeout(countUp);
       $(levelOne).hide();
+      $(levelTwo).hide();
      $(".welcome-page").delay(2000).fadeIn(); 
     });
 
@@ -60,6 +61,7 @@ $(function() {
       winner = [];
       clearTimeout(countUp);
       $(levelTwo).hide();
+      $(levelOne).hide();
       $(".welcome-page").delay(2000).fadeIn(); 
     });
   });
@@ -82,13 +84,15 @@ $(function() {
         var dropped = ui.draggable;
         var droppedOn = $(this);
         //snap into place
-        $(dropped).detach().css({top: 0,left: 0}).appendTo(droppedOn);
-        //if dropped on disable draggable
-        if (!!$(dropped).attr('id').match($(droppedOn).attr('id'))) {
-          $(dropped).draggable({
-            disabled: true
-          });
-          audio.play();
+        if($(droppedOn).is(':empty')) {
+          $(dropped).detach().css({top: 0,left: 0}).appendTo(droppedOn);
+          if ($(dropped).attr('id').replace('Copy', '') === $(droppedOn).attr('id')) {
+
+            $(dropped).draggable({
+              disabled: true
+            });
+            audio.play();
+          }
         }
         checkForWin(level, countUp, count, $countdown); 
       }
@@ -110,7 +114,7 @@ $(function() {
       clearTimeout(countUp);
       winner.push(count);
       console.log(winner);
-      if (winner.length === 1) {
+     if (winner.length === 1) {
         $(level).hide();
         $(".playerTwo").show().fadeOut(3000);
         $(level).delay(4000).fadeIn(); 
