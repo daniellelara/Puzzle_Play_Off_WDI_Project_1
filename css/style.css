@@ -93,6 +93,7 @@ div#hard:hover {
   margin-left: 25vw;
   margin-top: 7vw;
   text-align: left;
+
 }
 
 .container {
@@ -102,6 +103,7 @@ div#hard:hover {
   background-color: #d6edf0;
   display: inline-block;
   margin-right: 20px;
+
   
 }
 
@@ -120,10 +122,12 @@ ul .puzzle-table {
 }
 
 .puzzle-draw {
-  height: 400px;
+  height: 300px;
   width: 400px;
   border: 1px solid transparent;
   display: inline-block;
+  vertical-align: top;
+  
 }
 
 .draw-piece{
@@ -132,6 +136,11 @@ ul .puzzle-table {
   border: 1px hidden transparent;
   background-color: transparent;
   display: inline-block;
+}
+
+.gameover {
+  cursor: pointer;
+  width: 100px;
 }
 
 
@@ -172,6 +181,7 @@ ul .puzzle-table {
     margin-left: 25vw;
     margin-top: 7vw;
     text-align: left;
+    vertical-align: baseline;
 }
 
 .hard-level .container {
@@ -181,6 +191,7 @@ ul .puzzle-table {
     background-color: #d6edf0;
     display: inline-block;
     margin-right: 20px;
+   
 }
 
 .hard-level .puzzle-piece {
@@ -195,6 +206,8 @@ ul .puzzle-table {
   width: 500px;
   border: 1px solid transparent;
   display: inline-block;
+  vertical-align: top;
+
 }
 
 .hard-level .draw-piece {
