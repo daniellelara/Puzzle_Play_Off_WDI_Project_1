@@ -34,6 +34,7 @@ $(function() {
       $('.easy-level .draw-piece').draggable({
         disabled: false
       });
+      winner = [];
       clearTimeout(countUp);
       $(levelOne).hide();
      $(".welcome-page").delay(2000).fadeIn(); 
@@ -56,6 +57,7 @@ $(function() {
       $('.hard-level .draw-piece').draggable({
         disabled: false
       });
+      winner = [];
       clearTimeout(countUp);
       $(levelTwo).hide();
       $(".welcome-page").delay(2000).fadeIn(); 
