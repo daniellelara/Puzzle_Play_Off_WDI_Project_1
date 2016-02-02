@@ -181,7 +181,7 @@ ul .puzzle-table {
     margin-left: 25vw;
     margin-top: 7vw;
     text-align: left;
-    vertical-align: baseline;
+    
 }
 
 .hard-level .container {
@@ -242,6 +242,20 @@ ul .puzzle-table {
 #pieceFivehard, #pieceSixhard, #pieceSevenhard, #pieceEighthard, #pieceNinehard, #pieceTenhard, #pieceElevenhard, #pieceTwelvehard, #pieceThirteenhard, #pieceFourteenhard, #pieceFifteenhard, #pieceSixteenhard {
   margin-top: -15px;
 }
+/*for tablets*/
+@media only screen and (max-width: 960px) {
+
+  .hard-level  .easy-level {
+   margin-left: 5vw;
+  }
+
+  .hard-level .puzzle-draw {
+    margin-top: 20px;
+  }
+
+}
+
+
 
 /*for mobiles*/
 
