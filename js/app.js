@@ -23,11 +23,8 @@ $(function() {
 
   $( "#easy" ).click(function() {
     $(".welcome-page").hide(); 
-
     $(".interlude").show().fadeOut(3000);
-
     $(".easy-level").delay(4000).fadeIn();  
-   
     playGame(levelOne, $('#screenTwo'));
   });
 
@@ -36,20 +33,16 @@ $(function() {
 
   $( "#hard" ).click(function() {
    $(".welcome-page").hide(); 
-  
-    $(".interlude").show().fadeOut(3000);
-
-    $(".hard-level").delay(4000).fadeIn();
-    playGame(levelTwo, $('#screenThree'));
-    
+   $(".interlude").show().fadeOut(3000);
+   $(".hard-level").delay(4000).fadeIn();
+   playGame(levelTwo, $('#screenThree'));
   });
 
-  
+  //when click end
   //game function
   function playGame(level, $countdown) {
     //set timer
     var count = -4;
-    
     countUp = setInterval(function(){
       count += 1
       var padOne = pad(count);
@@ -62,16 +55,15 @@ $(function() {
       drop: function(ev, ui) {
         var dropped = ui.draggable;
         var droppedOn = $(this);
-        //if dropped on same id, draggeble taken off
+        //snap into place
         $(dropped).detach().css({top: 0,left: 0}).appendTo(droppedOn);
-
+        //if dropped on disable draggable
         if (!!$(dropped).attr('id').match($(droppedOn).attr('id'))) {
           $(dropped).draggable({
             disabled: true
           });
           audio.play();
         }
-         
         checkForWin(level, countUp, count, $countdown); 
       }
 
@@ -122,16 +114,36 @@ $(function() {
             $(".draw").show().fadeOut(5000);
             pageReset(level);
             $(".welcome-page").delay(5000).fadeIn(); 
-            
           }
-
+        }
       }
     }
-
-  }
   //revert peices back to normal place and shuffle
-  function resetBoard(level) {
-    $pieces = $(level + " li.draw-piece");
+    function resetBoard(level) {
+      $pieces = $(level + " li.draw-piece");
+
+      $pieces.appendTo($(level + " .puzzle-draw"));
+      $pieces.randomize();
+
+      $('.draw-piece').draggable({
+        disabled: false
+      });
+      audioThree.play();
+    }
+
+//shuffle li elements
+    $.fn.randomize = function(selector){
+        (selector ? this.find(selector) : this).parent().each(function(){
+          console.log($(this));
+            $(this).children(selector).sort(function(){
+                return Math.random() - 0.5;
+            }).detach().appendTo(this);
+        });
+
+        return this;
+    };
+
+  function pageReset(level) {
 
     $pieces.appendTo($(level + " .puzzle-draw"));
     $pieces.randomize();
@@ -139,33 +151,10 @@ $(function() {
     $('.draw-piece').draggable({
       disabled: false
     });
-    audioThree.play();
+
+    winner = [];
+
   }
-
-//shuffle li elements
-$.fn.randomize = function(selector){
-    (selector ? this.find(selector) : this).parent().each(function(){
-      console.log($(this));
-        $(this).children(selector).sort(function(){
-            return Math.random() - 0.5;
-        }).detach().appendTo(this);
-    });
-
-    return this;
-};
-
-function pageReset(level) {
-
-  $pieces.appendTo($(level + " .puzzle-draw"));
-  $pieces.randomize();
-
-  $('.draw-piece').draggable({
-    disabled: false
-  });
-
-  winner = [];
-
-}
 
 
 
